@@ -1,5 +1,5 @@
 #!/bin/execlineb -P
-envfile /etc/s6-rc/conf.d/seatd.conf
+s6-envdir /etc/s6-rc/conf.d/seatd.conf.d
 importas -sCuD "n3 s2000000 T" DIRECTIVES DIRECTIVES
 ifelse { test -w /var/log } {
 	foreground { install -d -o s6log -g s6log /var/log/seatd }

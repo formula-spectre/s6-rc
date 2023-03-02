@@ -1,9 +1,0 @@
-USER=doctor-sex
-DISPLAY=:1
-UID=1000
-HOME=/home/doctor-sex
-XDG_RUNTIME_DIR=/run/user/1000
-XDG_DATA_HOME=/home/zgentoo-cloud/.local/share
-XAUTHORITY=/home/zgentoo-cloud/.local/share/sx/xauthority
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/zgentoo-cloud/dbus
-PATH=/bin:/usr/local/bin:/usr/bin:/usr/libexec:/sbin/dinit

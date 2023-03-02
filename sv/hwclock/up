@@ -1,4 +1,4 @@
 #!/bin/execlineb -P
-envfile /etc/s6-rc/conf.d/hwclock.conf
+s6-envdir /etc/s6-rc/conf.d/hwclock.conf.d
 importas -uD "UTC" HARDWARECLOCK HARDWARECLOCK
 ifelse { test $HARDWARECLOCK = UTC } { hwclock --systz --utc --noadjfile } hwclock --systz --localtime --noadjfile

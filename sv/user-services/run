@@ -1,5 +1,5 @@
 #!/bin/execlineb -P
-envfile /etc/s6-rc/conf.d/user-services.conf
+s6-envdir /etc/s6-rc/conf.d/user-services.conf.d
 importas  USER USER
 #importas -u UID UID 
 #importas -u DISPLAY DISPLAY

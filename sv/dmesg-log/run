@@ -1,5 +1,5 @@
 #!/bin/execlineb -P
-envfile /etc/s6-rc/conf.d/dmesg.conf
+s6-envdir /etc/s6-rc/conf.d/dmesg.conf.d
 importas -sCuD "n3 s2000000 T" DIRECTIVES DIRECTIVES
 ifelse { test -w /var/log } {
 	foreground { if -t { test -f /var/log/dmesg } rm /var/log/dmesg }

@@ -3,7 +3,7 @@ foreground { redirfd -w 1 /dev/null ssh-keygen -A }
 foreground { touch /var/log/lastlog }
 foreground { chgrp utmp /var/log/lastlog }
 foreground { chmod 664 /var/log/lastlog }
-envfile /etc/s6-rc/conf.d/openssh.conf
+s6-envdir /etc/s6-rc/conf.d/openssh.conf.d
 importas -sCuD "" OPTS OPTS
 fdmove -c 2 1
 exec /usr/bin/sshd -D -e ${OPTS}

@@ -1,5 +1,5 @@
 #!/usr/bin/execlineb -P
-envfile /etc/s6-rc/conf.d/thinkfan.conf
+s6-envdir /etc/s6-rc/conf.d/thinkfan.conf.d
 importas -sCiu DIRECTIVES DIRECTIVES
 ifelse { test -w /var/log } {
 	foreground { install -d -o s6log -g s6log /var/log/thinkfan }

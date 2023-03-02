@@ -1,6 +1,6 @@
 #!/bin/execlineb -P
 if { pipeline { s6-rc -ba list } grep -qFx mount-filesystems }
-envfile /etc/s6-rc/conf.d/tty4.conf
+s6-envdir /etc/s6-rc/conf.d/tty4.conf.d
 importas -uD "yes" SPAWN SPAWN
 importas -sCuD "" ARGS ARGS
 importas -sCuD "agetty" GETTY GETTY

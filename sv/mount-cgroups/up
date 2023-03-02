@@ -1,5 +1,5 @@
 #!/bin/execlineb -P
-envfile /etc/s6-rc/conf.d/mount-cgroups.conf
+s6-envdir /etc/s6-rc/conf.d/mount-cgroups.conf.d
 importas -uD "hybrid" CGROUP_MODE CGROUP_MODE
 importas -uD "none" CGROUP_CONTROLLERS CGROUP_CONTROLLERS
 importas -uD "true" HAVE_CONTROLLER1_GROUPS HAVE_CONTROLLER1_GROUPS

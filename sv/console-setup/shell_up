@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ -r /etc/vconsole.conf ] && . /etc/vconsole.conf
+[ -r /etc/vconsole.conf.d ] && . /etc/vconsole.conf.d
 TTYS=${TTYS:-6}
 _index=0
 while [ ${_index} -le $TTYS ]; do

@@ -1,6 +1,6 @@
 #!/bin/execlineb -P
 if { pipeline { s6-rc -ba list } grep -qFx mount-filesystems }
-envfile /etc/s6-rc/conf.d/ttyS.conf
+s6-envdir /etc/s6-rc/conf.d/ttyS.conf.d
 importas -uD "ttyAMA0" TTY TTY
 importas -uD "115200" BAUD_RATE BAUD_RATE
 importas -uD "yes" SPAWN SPAWN

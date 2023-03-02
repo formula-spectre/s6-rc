@@ -1,5 +1,5 @@
 #!/bin/sh
-[ -r /etc/s6/config/network-detection.conf ] && . /etc/s6/config/network-detection.conf
+[ -r /etc/s6/config/network-detection.conf.d ] && . /etc/s6/config/network-detection.conf.d
 if [ $SECONDS = 0 ]; then
     SECONDS=60
 fi
