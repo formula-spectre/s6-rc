@@ -1,9 +1,9 @@
 #!/bin/execlineb -P
 if { pipeline { s6-rc -ba list } grep -qFx mount-filesystems }
-s6-envdir /etc/s6-rc/conf.d/tty1.conf.d
+envfile /etc/s6/config/tty3.conf
 importas -uD "yes" SPAWN SPAWN
 importas -sCuD "" ARGS ARGS
 importas -sCuD "agetty" GETTY GETTY
-if -t { test -e /dev/tty1 }
+if -t { test -e /dev/tty3 }
 if -t { test ${SPAWN} = "yes" }
-	exec ${GETTY} -L -8 tty1 115200 ${ARGS}
+	exec ${GETTY} -L -8 ${1} 115200 ${ARGS}

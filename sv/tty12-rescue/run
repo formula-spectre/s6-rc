@@ -1,0 +1,3 @@
+#!/bin/execlineb -P
+s6-envdir /etc/s6-rc/conf.d/tty12.conf.d/
+exec agetty -L -8 tty12 115200
