@@ -1,0 +1,5 @@
+#!/bin/execlineb -P
+envfile /etc/s6-rc/conf.d/wpa_supplicant.conf
+importas -uD "wlan0" WPA_INTERFACE WPA_INTERFACE
+fdmove -c 2 1
+exec /usr/bin/wpa_supplicant -i ${WPA_INTERFACE} -c /etc/wpa_supplicant/wpa_supplicant.conf

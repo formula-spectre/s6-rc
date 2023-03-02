@@ -1,0 +1,11 @@
+#!/bin/execlineb -P
+foreground { dbus-uuidgen --ensure=/etc/machine-id }
+foreground { install -m755 -g 81 -o 81 -d /run/dbus }
+foreground { 
+	envfile /etc/s6-rc/conf.d/dbus.conf
+	importas -uD "no" DBUS_UUIDGEN DBUS_UUIDGEN
+	if { test ${DBUS_UUIDGEN} = "yes" }
+	redirfd -w 1 /etc/machine-id dbus-uuidgen
+}
+fdmove -c 2 1
+exec dbus-daemon --system --nofork --nopidfile --print-pid=3

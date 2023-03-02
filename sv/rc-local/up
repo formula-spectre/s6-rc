@@ -1,0 +1,5 @@
+#!/bin/execlineb -P
+foreground { sh /etc/s6-rc/rc.local }
+elglob -0 scripts /etc/local.d/*.start
+forx -E script { ${scripts} }
+	sh -c "${script}"

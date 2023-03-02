@@ -1,0 +1,3 @@
+#!/bin/execlineb -P
+backtick -n -D "512" -E bytes { cat /proc/sys/kernel/random/poolsize }
+redirfd -w 2 /dev/null dd if=/dev/urandom of=/var/lib/random-seed count=1 bs=$bytes

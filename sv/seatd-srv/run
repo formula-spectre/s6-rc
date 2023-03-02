@@ -1,0 +1,4 @@
+#!/bin/execlineb -P
+export SEATD_LOGLEVEL debug
+fdmove -c 2 1
+exec seatd -g seat -n 3

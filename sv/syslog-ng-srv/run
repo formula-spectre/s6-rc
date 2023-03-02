@@ -1,0 +1,4 @@
+#!/bin/execlineb -P
+foreground { getpid PID redirfd -w 1 /var/run/syslog-ng.pid echo $PID }
+fdmove -c 2 1
+exec syslog-ng -F

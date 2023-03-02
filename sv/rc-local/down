@@ -1,0 +1,4 @@
+#!/bin/execlineb -P
+elglob -0 scripts /etc/local.d/*.stop
+forx -E script { ${scripts} }
+	sh -c "${script}"
