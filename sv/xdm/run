@@ -1,2 +1,3 @@
 #!/bin/execlineb -P
+foreground { xrdb -merge /etc/X11/Xresources.xdm }
 fdmove -c 2 1 xdm -nodaemon
